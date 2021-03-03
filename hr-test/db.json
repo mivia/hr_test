@@ -1,0 +1,16 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "name": "Mark",
+      "surname": "Cool",
+      "status": "ADDED"
+    },
+    {
+      "id": 2,
+      "name": "Elizabeth",
+      "surname": "Harmon",
+      "status": "IN-CHECK"
+    }
+  ]
+}
