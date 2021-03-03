@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import { getEmployees, addEmployee, inCheckEmployee, approveEmployee, activateEmployee, inActivateEmployee, ACTIONS, EMPLOYEE_STATUSES } from '../actions';
 
@@ -78,6 +79,15 @@ function EmployeeList(props) {
         </TableContainer>
     </div>
   );
+}
+
+EmployeeList.propTypes = {
+  getEmployees: PropTypes.func.isRequired,
+  addEmployee: PropTypes.func.isRequired,
+  inCheckEmployee: PropTypes.func.isRequired,
+  approveEmployee: PropTypes.func.isRequired,
+  activateEmployee: PropTypes.func.isRequired,
+  inActivateEmployee: PropTypes.func.isRequired,
 }
 
 const mapStateToProps = (state, ownProps) => ({ employees: state.employees });
