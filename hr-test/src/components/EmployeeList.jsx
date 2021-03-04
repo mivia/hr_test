@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useCallback } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
@@ -23,7 +23,7 @@ function EmployeeList(props) {
     //eslint-disable-next-line
   }, []);
 
-  const handleActionChange = (event, employee, actionType) => {
+  const handleActionChange = useCallback((event, employee, actionType) => {
     switch(actionType) {
       case ACTIONS.ADD_EMPLOYEE:
         props.addEmployee(employee.id)
@@ -42,7 +42,8 @@ function EmployeeList(props) {
         break;
       default: console.log('no action found')
     }
-  }
+  }, [props])
+
   return (
     <div className="App">
       <TableContainer component={Paper}>
