@@ -1,5 +1,7 @@
 import axios from 'axios';
 
+import { EMPLOYEE_STATUSES } from '../constants';
+
 const HOST = 'http://localhost:3001';
 
 export const ACTIONS = {
@@ -9,14 +11,6 @@ export const ACTIONS = {
   APPROVE_EMPLOYEE: 'APPROVE_EMPLOYEE',
   ACTIVATE_EMPLOYEE: 'ACTIVATE_EMPLOYEE',
   INACTIVATE_EMPLOYEE: 'INACTIVATE_EMPLOYEE',
-}
-
-export const EMPLOYEE_STATUSES = {
-  ADDED: 'ADDED',
-  INCHECK: 'IN-CHECK',
-  APPROVED: 'APPROVED',
-  ACTIVE: 'ACTIVE',
-  INACTIVE: 'INACTIVE'
 }
 
 const addEmployees = (employees) => ({

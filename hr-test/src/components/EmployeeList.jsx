@@ -2,7 +2,8 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import { getEmployees, addEmployee, inCheckEmployee, approveEmployee, activateEmployee, inActivateEmployee, ACTIONS, EMPLOYEE_STATUSES } from '../actions';
+import { getEmployees, addEmployee, inCheckEmployee, approveEmployee, activateEmployee, inActivateEmployee, ACTIONS } from '../actions';
+import { EMPLOYEE_STATUSES } from '../constants';
 
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -23,7 +24,6 @@ function EmployeeList(props) {
   }, []);
 
   const handleActionChange = (event, employee, actionType) => {
-
     switch(actionType) {
       case ACTIONS.ADD_EMPLOYEE:
         props.addEmployee(employee.id)
@@ -52,7 +52,7 @@ function EmployeeList(props) {
               <TableCell>Name</TableCell>
               <TableCell align="right">Surname</TableCell>
               <TableCell align="right">Status</TableCell>
-              <TableCell align="right">Actions</TableCell>
+              <TableCell align="center">Actions</TableCell>
             </TableRow>
             </TableHead>
             <TableBody>
